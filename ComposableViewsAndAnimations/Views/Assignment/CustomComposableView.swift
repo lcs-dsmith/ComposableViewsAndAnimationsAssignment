@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct CustomComposableView: View {
+    
+    @State private var offset: CGFloat = 40
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+     
+        Text("VROOOOM")
+            .offset(x: offset, y: offset)
+            .onTapGesture {
+                offset = 100
+            }
+            .animation(.interpolatingSpring(stiffness: 50, damping: 0.5))
+            
     }
 }
 
